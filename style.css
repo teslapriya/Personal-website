@@ -29,3 +29,24 @@ footer {
     text-align: center;
     padding: 2rem 1rem;
 }
+
+/* Research page-specific styles */
+#research-page {
+    background-color: #000;
+    padding: 2rem;
+}
+
+#research-page h2 {
+    color: #ffcc00;
+}
+
+/* Gallery page-specific styles */
+#gallery-page {
+    background-color: #222;
+    padding: 2rem;
+}
+
+#gallery-page h2 {
+    color: #00ffcc;
+}
+
