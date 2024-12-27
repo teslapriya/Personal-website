@@ -6,6 +6,8 @@
     <meta name="description" content="AstroPriya - Personal Website">
     <title>AstroPriya</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
     <style>
         body, html {
             margin: 0;
@@ -16,12 +18,35 @@
 
         header {
             background-color: rgba(0, 0, 0, 0.8);
-            padding: 1rem 0;
+            padding: 0.5rem 0; /* Reduced padding for tighter fit */
             text-align: center;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+        }
+
+        .astro {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: #00ffff;
+        }
+
+        .astronaut {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background: url('images/astronaut_x.png') no-repeat center center/contain;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         .hero {
@@ -33,85 +58,73 @@
             text-align: center;
         }
 
-        #research {
-            padding: 2rem;
-            background-color: #222;
-            color: #fff;
-        }
-
-        .research-container h2 {
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        .research-container ul {
-            list-style-type: square;
-            padding-left: 2rem;
-        }
-
-        .project {
-            margin-bottom: 2rem;
-            background-color: #333;
-            padding: 1rem;
-            border-radius: 5px;
-        }
-
         footer {
             background-color: #111;
             text-align: center;
             padding: 2rem 1rem;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: inline-block;
+        }
+
+        .social-links a {
+            margin: 0 0.5rem;
+            color: #fff;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #00acee; /* Example: Change color on hover */
+        }
+
+        .intro {
+            width: 40%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 2rem;
+            color: white;
+            margin-top: 120px; /* Shifted down a bit */
         }
     </style>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <h1>Welcome to the world of <span class="astro">AstroPriya</span></h1>
+            <h1>Welcome to the world of <span class="astro">AstroPriya!</span><span class="astronaut"></span></h1>
             <nav>
-                <a href="#research">Research</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#contact">Contact</a>
+                <a href="research.html">Research</a>
+                <a href="gallery.html">Gallery</a>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/priya-shukla-4730731b9/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/teslapriya" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
             </nav>
         </div>
     </header>
 
     <section class="hero">
         <div class="overlay">
-            <div class="intro" style="width: 50%; background-color: rgba(0, 0, 0, 0.7); padding: 2rem; color: white;">
-                <h2>About Me</h2>
-                <p>I am Priya Shukla, a passionate astrophysics and electronics enthusiast. I explore the mysteries of the universe through physics and embedded electronics. With a background in machine learning applications in physics, I aim to bridge the gap between technology and space exploration.</p>
+            <div class="intro">
+                <h2>About me</h2>
+                <p>My name is Priya Shukla. I am currently working on the deployment of "Galactic Radio Explorer" (GReX), a low-cost radio telescope for searching microseconds galactic Fast Radio Bursts (FRBs). As an undergraduate student, I have explored the domain of astronomical instrumentation through various cool projects including my work at Caltech on GReX and Square Kilometer Array Radio Telescope. I am passionate about exploring the universe by integrating engineering with astronomy.</p>
             </div>
         </div>
     </section>
 
-    <section id="research">
-        <div class="research-container" style="padding: 2rem;">
-            <h2>My Research</h2>
-            <p>My research focuses on developing innovative instrumentation and methodologies for astronomical exploration. Key areas include:</p>
-            <ul>
-                <li><strong>Radio Frequency and Microwave Systems:</strong> Developing RF and microwave technologies to enhance the sensitivity and accuracy of astronomical observations.</li>
-                <li><strong>Signal Processing Pipelines:</strong> Building robust pipelines to analyze high-volume data from radio telescopes for detecting celestial phenomena like pulsars and fast radio bursts (FRBs).</li>
-                <li><strong>Machine Learning Applications:</strong> Applying ML techniques for classification, clustering, and real-time analysis of astronomical data.</li>
-            </ul>
-
-            <h3>Recent Projects</h3>
-            <div class="project">
-                <h4>GReX-T3 Subsystem Development</h4>
-                <p>Designed and deployed a subsystem for processing single-pulse candidates, coincidence detection across multiple terminals, and applying ML-based classification to refine astronomical event detection.</p>
-            </div>
-            <div class="project">
-                <h4>Imaging Cracks in Metals with Microwaves</h4>
-                <p>Utilized microwave imaging techniques to study structural defects in metals, demonstrating the potential for non-destructive evaluation in industrial and research applications.</p>
-            </div>
-            <div class="project">
-                <h4>Instrumentation for Astronomical Research</h4>
-                <p>Contributed to building instruments for astronomical research, leveraging my expertise in electronics, RF systems, and data analysis to push technological boundaries.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact">
-        <p>Contact me at <a href="mailto:priya20@iiserb.ac.in">priya20@iiserb.ac.in</a></p>
+    <footer>
+        <p>&copy; 2024 AstroPriya | Contact me at <a href="mailto:priya@example.com">priya@example.com</a></p>
     </footer>
 </body>
 </html>
