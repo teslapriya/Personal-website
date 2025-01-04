@@ -1,29 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-<body id="gallery-page">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - AstroPriya</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #f5f5f0; /* Dusty white */
+            color: #000000; /* Black text */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "AstroPriya";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10rem; /* Adjust size for watermark effect */
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.05); /* Transparent black for watermark */
+            z-index: -1; /* Send behind all content */
+            white-space: nowrap;
+            user-select: none; /* Prevent text selection */
+        }
+
+        .home-arrow {
+            position: fixed;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            background-color: #5a5aed; /* Bold color */
+            color: white;
+            font-size: 24px;
+            padding: 10px 15px;
+            border-radius: 50%;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .home-arrow:hover {
+            background-color: #4a4acb; /* Darker blue on hover */
+        }
+
+        #gallery {
+            padding: 20px;
+            text-align: center;
+        }
+
+        #gallery h2 {
+            font-size: 1.8rem;
+            color: #5a5aed;
+            margin-bottom: 10px;
+        }
+
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .gallery-item {
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item p {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* New styling for the second row of images */
+        .gallery-row {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery-item-large img {
+            max-width: 400px; /* Increased image size */
+        }
+
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        /* Astronaut styling (floating animation) */
+        .astronaut {
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            background: url('images/astronaut_x.png') no-repeat center center/contain;
+            animation: float 3s ease-in-out infinite;
+            position: absolute;
+            bottom: 80%;
+            left: 75%;
+            transform: translateX(-50%);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+    </style>
 </head>
-<body>
-    <header>
-        <h1>AstroPriya</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="research.html">Research</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+<body id="gallery-page">
+
+    <!-- Home arrow -->
+    <a href="index.html" class="home-arrow" title="Go to Home">&larr;</a>
+
+    <!-- Astronaut animation -->
+    <span class="astronaut"></span>
+
     <section id="gallery">
-        <h2>Gallery</h2>
+        <h2>Highlights of My Internships and Visits</h2>
         <p>Explore some visual highlights from my projects and adventures:</p>
         <div class="gallery-container">
-            <img src="images/project1.jpg" alt="Project 1">
-            <img src="images/project2.jpg" alt="Project 2">
-            <img src="images/project3.jpg" alt="Project 3">
+            <div class="gallery-item gallery-item-large">
+                <img src="images/caltech.jpeg" alt="California Institute of Technology">
+                <p>California Institute of Technology, Pasadena</p>
+            </div>
+            <div class="gallery-item gallery-item-large">
+                <img src="images/jpl.jpg" alt="Jet Propulsion Laboratory">
+                <p>Jet Propulsion Laboratory, Pasadena</p>
+            </div>
+        </div>
+        <!-- Second row for Europa and OVRO images -->
+        <div class="gallery-row">
+            <div class="gallery-item">
+                <img src="images/europa.jpeg" alt="Europa Clipper Payload">
+                <p>JPL, Payload of Europa Clipper Spacecraft</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/deployment.jpg" alt="Owens Valley Radio Observatory">
+                <p>Owens Valley Radio Observatory, California, DSA-110</p>
+            </div>
+        </div>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="images/GBD.jpg" alt="Astrophotography">
+                <p>Astrophotography</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/spacex.jpg" alt="SpaceX, Los Angeles, USA">
+                <p>Falcon-9 Rocket</p>
+            </div>    
         </div>
     </section>
+
+    <footer>
+        &copy; 2025 AstroPriya. All rights reserved.
+    </footer>
 </body>
 </html>
