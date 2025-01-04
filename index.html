@@ -18,12 +18,18 @@
 
         header {
             background-color: rgba(0, 0, 0, 0.8);
-            padding: 0.5rem 0; /* Reduced padding for tighter fit */
+            padding: 0.5rem 0;
             text-align: center;
             position: fixed;
-            width: 100%;
+            width: 50%;
+            left: 25%;
             top: 0;
             z-index: 1000;
+            border-radius: 10px;
+        }
+
+        .header-content h1 {
+            margin-bottom: 0.5rem; /* Reduce gap below the heading */
         }
 
         .astro {
@@ -34,10 +40,13 @@
 
         .astronaut {
             display: inline-block;
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             background: url('images/astronaut_x.png') no-repeat center center/contain;
             animation: float 3s ease-in-out infinite;
+            position: absolute;
+            left: 85%; /* Position below "Research" link */
+            top: -75px; /* Shifted downward */
         }
 
         @keyframes float {
@@ -47,6 +56,24 @@
             50% {
                 transform: translateY(-10px);
             }
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
         }
 
         .hero {
@@ -64,17 +91,6 @@
             padding: 2rem 1rem;
         }
 
-        nav a {
-            margin: 0 1rem;
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
         .social-links {
             display: inline-block;
         }
@@ -87,7 +103,7 @@
         }
 
         .social-links a:hover {
-            color: #00acee; /* Example: Change color on hover */
+            color: #00acee;
         }
 
         .intro {
@@ -95,14 +111,14 @@
             background-color: rgba(0, 0, 0, 0.7);
             padding: 2rem;
             color: white;
-            margin-top: 120px; /* Shifted down a bit */
+            margin-top: 120px;
         }
     </style>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <h1>Welcome to the world of <span class="astro">AstroPriya!</span><span class="astronaut"></span></h1>
+            <h1 style="margin-bottom: 1rem;">Welcome to the world of <span class="astro">AstroPriya!</span></h1>
             <nav>
                 <a href="research.html">Research</a>
                 <a href="gallery.html">Gallery</a>
@@ -110,6 +126,7 @@
                     <a href="https://www.linkedin.com/in/priya-shukla-4730731b9/" target="_blank"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com/teslapriya" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
+                <span class="astronaut"></span> <!-- Astronaut positioned below "Research" -->
             </nav>
         </div>
     </header>
@@ -124,7 +141,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 AstroPriya | Contact me at <a href="mailto:priya20@iiserb.ac.in">priya20@iiserb.ac.in</a></p>
+        <p>&copy; 2024 AstroPriya | Contact me at <a href="mailto:shuklapriya244@gmail.com">shuklapriya244@gmail.com</a></p>
     </footer>
 </body>
 </html>
